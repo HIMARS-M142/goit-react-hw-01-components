@@ -3,8 +3,7 @@ import { Stats, StatTitle, StatUl, StatsList } from './StatisticsStyled';
 export const Statistics = ({ title, stats }) => {
   return (
     <Stats className="statistics">
-      <StatTitle className="title">{title}</StatTitle>
-
+      {title ? <StatTitle className="title">{title}</StatTitle> : null}
       <StatUl className="stat-list">
         {stats.map(stat => {
           return (
@@ -24,8 +23,15 @@ export const Statistics = ({ title, stats }) => {
 };
 
 Statistics.propTypes = {
-  title: PropTypes.string.isRequired,
-  stats: PropTypes.arrayOf(PropTypes.object).isRequired,
+  title: PropTypes.string,
+  stats: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number.isRequired,
+      label: PropTypes.oneOfType([PropTypes.string, PropTypes.number])
+        .isRequired,
+      percentage: PropTypes.number.isRequired,
+    }).isRequired
+  ).isRequired,
 };
 
 function generateColor() {

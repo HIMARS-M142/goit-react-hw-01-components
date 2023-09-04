@@ -1,6 +1,6 @@
 import { Table, TrTable, THeadText, TdText } from './TransactionHistoryStyled';
 
-export const TransactionHistory = values => {
+export const TransactionHistory = ({ items }) => {
   return (
     <Table className="transaction-history">
       <thead>
@@ -10,7 +10,7 @@ export const TransactionHistory = values => {
           <THeadText>Currency</THeadText>
         </TrTable>
       </thead>
-      {values.items.map(({ id, type, amount, currency }) => {
+      {items.map(({ id, type, amount, currency }) => {
         return (
           <tbody key={id}>
             <TrTable>
