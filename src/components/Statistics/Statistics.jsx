@@ -22,18 +22,6 @@ export const Statistics = ({ title, stats }) => {
   );
 };
 
-Statistics.propTypes = {
-  title: PropTypes.string,
-  stats: PropTypes.arrayOf(
-    PropTypes.shape({
-      id: PropTypes.number.isRequired,
-      label: PropTypes.oneOfType([PropTypes.string, PropTypes.number])
-        .isRequired,
-      percentage: PropTypes.number.isRequired,
-    }).isRequired
-  ).isRequired,
-};
-
 function generateColor() {
   return '#' + Math.floor(Math.random() * 16777215).toString(16);
 }

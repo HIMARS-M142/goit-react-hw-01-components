@@ -33,17 +33,3 @@ export const Profile = ({ avatar, stats, username, tag, location }) => {
     </ProfileContainer>
   );
 };
-
-Profile.propTypes = {
-  avatar: PropTypes.string.isRequired,
-  stats: PropTypes.objectOf(
-    PropTypes.shape({
-      followers: PropTypes.number.isRequired,
-      views: PropTypes.number.isRequired,
-      likes: PropTypes.number.isRequired,
-    }).isRequired
-  ).isRequired,
-  username: PropTypes.string.isRequired,
-  tag: PropTypes.string.isRequired,
-  location: PropTypes.string.isRequired,
-};
