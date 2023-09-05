@@ -2,7 +2,7 @@ import { Stats, StatTitle, StatUl, StatsList } from './StatisticsStyled';
 export const Statistics = ({ title, stats }) => {
   return (
     <Stats className="statistics">
-      <StatTitle className="title">{title}</StatTitle>
+      {title && <StatTitle className="title">{title}</StatTitle>}
       <StatUl className="stat-list">
         {stats.map(({ id, label, percentage }) => {
           return (
