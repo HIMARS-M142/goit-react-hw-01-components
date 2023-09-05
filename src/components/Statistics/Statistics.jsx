@@ -5,15 +5,15 @@ export const Statistics = ({ title, stats }) => {
     <Stats className="statistics">
       {title ? <StatTitle className="title">{title}</StatTitle> : null}
       <StatUl className="stat-list">
-        {stats.map(stat => {
+        {stats.map(({ id, label, percentage }) => {
           return (
             <StatsList
-              key={stat.id}
+              key={id}
               className="item"
               style={{ backgroundColor: generateColor() }}
             >
-              <span className="label">{stat.label}</span>
-              <span className="percentage"> {stat.percentage}%</span>
+              <span className="label">{label}</span>
+              <span className="percentage"> {percentage}%</span>
             </StatsList>
           );
         })}
