@@ -1,4 +1,3 @@
-import PropTypes from 'prop-types';
 import { Stats, StatTitle, StatUl, StatsList } from './StatisticsStyled';
 export const Statistics = ({ title, stats }) => {
   return (

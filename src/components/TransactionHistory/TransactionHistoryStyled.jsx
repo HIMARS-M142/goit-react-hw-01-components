@@ -1,4 +1,4 @@
-import { styled } from 'styled-components';
+import styled from 'styled-components';
 export const Table = styled.table`
   table-layout: fixed;
   border-collapse: collapse;

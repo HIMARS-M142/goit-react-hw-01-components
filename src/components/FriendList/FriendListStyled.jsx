@@ -1,11 +1,11 @@
-import { styled } from 'styled-components';
+import styled from 'styled-components';
 
 export const FriendStatus = styled.span`
   display: flex;
   width: 20px;
   height: 20px;
-  background-color: ${({ isOnline }) => {
-    return isOnline ? 'green' : 'red';
+  background-color: ${({ $isOnline }) => {
+    return $isOnline ? 'green' : 'red';
   }};
   border-radius: 100%;
   padding: 0;
